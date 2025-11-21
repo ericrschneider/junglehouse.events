@@ -87,8 +87,8 @@ body {
 .hero-text {
   flex: 1 1 0;
   min-width: 280px;
-  max-width: 500px;       /* slightly narrower for a stronger column */
-  padding-top: 0.3rem;    /* subtle downward alignment */
+  max-width: 500px;        /* narrows column for better rhythm */
+  padding-top: 0.3rem;     /* subtle vertical alignment improvement */
 }
 
 /* Logo + title row */
@@ -96,7 +96,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  margin-bottom: 1.4rem;  /* refined spacing */
+  margin-bottom: 1.4rem;   /* refined spacing */
 }
 
 /* Logo sizing */
@@ -126,9 +126,9 @@ body {
 
 /* Right column: Image block */
 .hero-image {
-  flex: 0 0 415px;        /* slightly larger image for balance */
+  flex: 0 0 415px;         /* slightly larger image for balance */
   max-width: 430px;
-  margin-top: 0.6rem;     /* improved vertical balance */
+  margin-top: 0.3rem;      /* <= final tweak (was 0.6rem) */
 }
 
 .hero-image img {
@@ -180,7 +180,6 @@ body {
     height: 44px;
   }
 }
-
 
 /* ------------------------------------------------------------
    Responsive (Tablet + Phone)
