@@ -77,28 +77,30 @@ body {
 .hero-brand {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
   margin-bottom: 1.2rem;
 }
 
+/* Base size — this applies to most screens */
 .hero-logo {
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
 }
 
-/* Smaller on phones, a bit larger on big screens */
+/* Slightly smaller on phones */
 @media (max-width: 640px) {
   .hero-logo {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
   }
 }
 
-@media (min-width: 960px) {
+/* Slightly bigger on desktops */
+@media (min-width: 1024px) {
   .hero-logo {
-    width: 46px;
-    height: 46px;
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -132,22 +134,8 @@ body {
 
 .hero-title {
   font-family: "Playfair Display", "Georgia", "Times New Roman", serif;
-  font-size: clamp(2.4rem, 3.2vw + 1.4rem, 3.7rem);
-  line-height: 1.05;
-  margin: 0 0 1.5rem;
-  color: var(--text-main);
-}
+  font-size: clamp(2.4rem, 3.2v
 
-.lead {
-  font-size: 1.18rem;
-  line-height: 1.7;
-}
-
-.hero-text p {
-  line-height: 1.7;
-  margin-top: 0;
-  margin-bottom: 0.9rem;
-}
 
 
 
