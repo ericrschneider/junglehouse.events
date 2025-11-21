@@ -70,10 +70,10 @@ body {
 }
 
 /* ------------------------------------------------------------
-   Hero Section – two-column layout + proportional icon
+   Hero Section (Ultra-Polished)
 ------------------------------------------------------------ */
 
-/* Whole hero layout (desktop) */
+/* Two-column layout (desktop) */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -83,40 +83,27 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* Left column: text */
+/* Left column container */
 .hero-text {
   flex: 1 1 0;
   min-width: 280px;
-  max-width: 500px;
-  padding-top: 0.3rem;   /* tiny vertical alignment tweak */
+  max-width: 500px;        /* narrows column for better rhythm */
+  padding-top: 0.3rem;     /* subtle vertical alignment improvement */
 }
 
 /* Logo + title row */
 .hero-brand {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  margin-bottom: 1.4rem;
+  gap: 1.1rem;
+  margin-bottom: 1.4rem;   /* refined spacing */
 }
 
-/* Icon sized relative to the heading */
+/* Logo sizing */
 .hero-logo {
-  height: 1.55em;        /* proportional to "Jungle House" text */
-  width: auto;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
-}
-
-/* Slightly smaller icon on narrower screens */
-@media (max-width: 900px) {
-  .hero-logo {
-    height: 1.45em;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-logo {
-    height: 1.35em;
-  }
 }
 
 /* Title typography */
@@ -128,11 +115,20 @@ body {
   color: var(--text-main);
 }
 
-/* Right column: image */
+/* Lead paragraph */
+.lead {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 40rem;
+}
+
+/* Right column: Image block */
 .hero-image {
-  flex: 0 0 415px;       /* gives it a solid column width */
+  flex: 0 0 415px;         /* slightly larger image for balance */
   max-width: 430px;
-  margin-top: 0.3rem;    /* aligns visually with the title block */
+  margin-top: 0.3rem;      /* <= final tweak (was 0.6rem) */
 }
 
 .hero-image img {
@@ -141,67 +137,6 @@ body {
   height: auto;
   border-radius: 24px;
 }
-
-/* Stack on smaller screens */
-@media (max-width: 800px) {
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-image {
-    order: -1;           /* image above text on mobile */
-    width: 100%;
-    max-width: 100%;
-    margin-top: 0;
-    margin-bottom: 1.4rem;
-  }
-
-  .hero-title {
-    font-size: clamp(2.1rem, 6vw, 2.7rem);
-  }
-}
-
-/* ------------------------------------------------------------
-   Responsive (Tablet + Phone)
------------------------------------------------------------- */
-
-@media (max-width: 900px) {
-  .hero-logo {
-    height: 1.55em;
-  }
-
-  .hero-image {
-    flex: 0 0 360px;
-    max-width: 380px;
-  }
-}
-
-@media (max-width: 800px) {
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-image {
-    order: -1; /* image above text */
-    width: 100%;
-    max-width: 100%;
-    margin-top: 0;
-    margin-bottom: 1.4rem;
-  }
-
-  .hero-title {
-    font-size: clamp(2.1rem, 6vw, 2.7rem);
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-logo {
-    height: 1.4em; /* slightly smaller icon for small phones */
-  }
-}
-
 
 /* ------------------------------------------------------------
    Responsive (Tablet + Phone)
@@ -214,8 +149,8 @@ body {
   }
 
   .hero-image {
-    flex: 0 0 340px;
-    max-width: 360px;
+    flex: 0 0 360px;
+    max-width: 380px;
   }
 }
 
@@ -227,7 +162,7 @@ body {
   }
 
   .hero-image {
-    order: -1;               /* image above text */
+    order: -1;            /* image above text */
     width: 100%;
     max-width: 100%;
     margin-top: 0;
@@ -243,47 +178,6 @@ body {
   .hero-logo {
     width: 44px;
     height: 44px;
-  }
-}
-
-
-/* ------------------------------------------------------------
-   Responsive (Tablet + Phone)
------------------------------------------------------------- */
-
-@media (max-width: 900px) {
-  .hero-logo {
-    width: 42px;
-    height: 42px;
-  }
-
-  .hero-image {
-    flex: 0 0 320px;
-  }
-}
-
-@media (max-width: 800px) {
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-  }
-
-  .hero-image {
-    order: -1; /* Image above text */
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .hero-title {
-    font-size: clamp(2rem, 6vw, 2.7rem);
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-logo {
-    width: 36px;
-    height: 36px;
   }
 }
 
