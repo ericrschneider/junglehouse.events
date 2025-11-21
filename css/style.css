@@ -70,7 +70,7 @@ body {
 }
 
 /* ------------------------------------------------------------
-   Hero Section
+   Hero Section (Ultra-Polished)
 ------------------------------------------------------------ */
 
 /* Two-column layout (desktop) */
@@ -87,7 +87,8 @@ body {
 .hero-text {
   flex: 1 1 0;
   min-width: 280px;
-  max-width: 520px;          /* slightly narrower for better balance */
+  max-width: 500px;       /* slightly narrower for a stronger column */
+  padding-top: 0.3rem;    /* subtle downward alignment */
 }
 
 /* Logo + title row */
@@ -95,12 +96,12 @@ body {
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;  /* refined spacing */
 }
 
-/* Logo sizing – make it feel intentional */
+/* Logo sizing */
 .hero-logo {
-  width: 64px;               /* was 48px */
+  width: 64px;
   height: 64px;
   object-fit: contain;
 }
@@ -125,9 +126,9 @@ body {
 
 /* Right column: Image block */
 .hero-image {
-  flex: 0 0 390px;           /* slightly larger image */
-  max-width: 410px;
-  margin-top: 0.4rem;        /* gentle nudge for visual alignment */
+  flex: 0 0 415px;        /* slightly larger image for balance */
+  max-width: 430px;
+  margin-top: 0.6rem;     /* improved vertical balance */
 }
 
 .hero-image img {
@@ -136,6 +137,50 @@ body {
   height: auto;
   border-radius: 24px;
 }
+
+/* ------------------------------------------------------------
+   Responsive (Tablet + Phone)
+------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+  .hero-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .hero-image {
+    flex: 0 0 360px;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .hero-image {
+    order: -1;            /* image above text */
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 6vw, 2.7rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-logo {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 
 /* ------------------------------------------------------------
    Responsive (Tablet + Phone)
