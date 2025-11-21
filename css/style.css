@@ -70,35 +70,43 @@ body {
 }
 
 /* ------------------------------------------------------------
-   Hero Section
+   Hero Section – two-column layout + proportional icon
 ------------------------------------------------------------ */
 
-/* Layout of the whole hero section */
+/* Whole hero layout (desktop) */
 .hero {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
   gap: 2.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  margin-bottom: 2.5rem;
 }
 
-/* Container holding logo + title */
+/* Left column: text */
+.hero-text {
+  flex: 1 1 0;
+  min-width: 280px;
+  max-width: 500px;
+  padding-top: 0.3rem;   /* tiny vertical alignment tweak */
+}
+
+/* Logo + title row */
 .hero-brand {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  gap: 0.9rem;
   margin-bottom: 1.4rem;
 }
 
-/* Scales icon with heading text */
+/* Icon sized relative to the heading */
 .hero-logo {
-  height: 1.55em;       /* proportional to text — matches brand image */
+  height: 1.55em;        /* proportional to "Jungle House" text */
   width: auto;
   object-fit: contain;
-  margin-top: 0.05em;    /* optical centering */
 }
 
-/* Responsive sizing for icon */
+/* Slightly smaller icon on narrower screens */
 @media (max-width: 900px) {
   .hero-logo {
     height: 1.45em;
@@ -111,34 +119,48 @@ body {
   }
 }
 
-/* Hero title (already in your design system) */
+/* Title typography */
 .hero-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2.4rem, 5vw, 3.4rem);
-  line-height: 1.05;
   margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 4.3vw, 3.2rem);
+  line-height: 1.1;
   color: var(--text-main);
 }
 
-/* Image container */
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 22px;
-  display: block;
+/* Right column: image */
+.hero-image {
+  flex: 0 0 415px;       /* gives it a solid column width */
+  max-width: 430px;
+  margin-top: 0.3rem;    /* aligns visually with the title block */
 }
 
-/* Stack on phones/tablets */
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
+
+/* Stack on smaller screens */
 @media (max-width: 800px) {
   .hero {
     flex-direction: column;
+    align-items: flex-start;
   }
+
   .hero-image {
-    order: -1;
+    order: -1;           /* image above text on mobile */
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 6vw, 2.7rem);
   }
 }
-
-
 
 /* ------------------------------------------------------------
    Responsive (Tablet + Phone)
