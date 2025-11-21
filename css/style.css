@@ -77,19 +77,19 @@ body {
 .hero {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;             /* text aligns to top of image */
-  gap: 3rem;                           /* a bit more breathing room */
+  align-items: flex-start;                    /* align text to top of image */
+  gap: clamp(2.2rem, 4vw, 3rem);             /* responsive gap */
   flex-wrap: nowrap;
   margin-bottom: 3rem;
-  padding-top: 1.25rem;                /* reduces top "floatiness" */
+  padding-top: 1.25rem;                      /* reduces top "floatiness" */
 }
 
 /* Left column container */
 .hero-text {
   flex: 1 1 0;
   min-width: 280px;
-  max-width: 540px;                    /* a touch wider for nicer line length */
-  padding-top: 0;                      /* align with top of image */
+  max-width: 540px;                          /* a touch wider for nicer line length */
+  padding-top: 0;                            /* align with top of image */
 }
 
 /* Logo + title row */
@@ -97,7 +97,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  margin-bottom: 1.6rem;               /* slightly more space under brand row */
+  margin-bottom: 1.6rem;                     /* slightly more space under brand row */
 }
 
 /* Logo sizing */
@@ -111,7 +111,7 @@ body {
 .hero-title {
   margin: 0;
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.7rem, 4.8vw, 3.4rem);  /* bigger: stronger hierarchy */
+  font-size: clamp(2.7rem, 4.4vw, 3.2rem);   /* bigger: stronger hierarchy */
   line-height: 1.05;
   letter-spacing: 0.01em;
   color: var(--text-main);
@@ -121,7 +121,7 @@ body {
 .lead {
   margin-top: 0.4rem;
   margin-bottom: 1.2rem;
-  font-size: 1.02rem;                   /* slightly down so title dominates */
+  font-size: 1.02rem;                        /* slightly down so title dominates */
   line-height: 1.55;
   color: var(--text-muted);
   max-width: 38rem;
@@ -129,20 +129,20 @@ body {
 
 /* Right column: Image block */
 .hero-image {
-  flex: 0 0 min(430px, 42%);            /* proportional to viewport width */
+  flex: 0 0 min(430px, 42%);                 /* proportional to viewport width */
   max-width: 440px;
-  margin-top: 0.2rem;                   /* fine-tune vertical alignment */
+  margin-top: 0.2rem;                        /* fine-tune vertical alignment */
 }
 
 .hero-image img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 22px;                  /* slightly tighter radius for polish */
+  border-radius: 22px;                       /* slightly tighter radius for polish */
 }
 
 /* ------------------------------------------------------------
-   Responsive (Tablet + Phone)
+   Responsive (Hero)
 ------------------------------------------------------------ */
 
 @media (max-width: 900px) {
@@ -176,7 +176,7 @@ body {
   }
 
   .hero-image {
-    order: -1;                          /* image above text */
+    order: -1;                               /* image above text */
     width: 100%;
     max-width: 100%;
     margin-top: 0;
@@ -190,6 +190,10 @@ body {
   .hero-title {
     font-size: clamp(2.1rem, 6vw, 2.7rem);
     line-height: 1.08;
+  }
+
+  .card {
+    padding: 1.7rem 1.5rem 1.9rem;           /* keep your tighter padding on small screens */
   }
 }
 
@@ -209,14 +213,12 @@ body {
   }
 }
 
-
-
 /* ------------------------------------------------------------
    Subscribe CTA Section
 ------------------------------------------------------------ */
 
 .subscribe-cta {
-  margin-top: 3rem;
+  margin-top: 3.2rem;                        /* tiny bump for clearer separation */
   padding: 2.5rem 2rem;
   background: var(--card-bg-soft);
   border-radius: 22px;
@@ -423,7 +425,7 @@ body {
 }
 
 /* ------------------------------------------------------------
-   Responsive Tweaks
+   Responsive Tweaks (Events etc.)
 ------------------------------------------------------------ */
 
 @media (max-width: 640px) {
@@ -433,24 +435,6 @@ body {
 
   .event-date-badge {
     min-width: 52px;
-  }
-}
-
-@media (max-width: 800px) {
-  .card {
-    padding: 1.7rem 1.5rem 1.9rem;
-  }
-
-  .hero {
-    flex-direction: column;
-  }
-
-  .hero-image {
-    order: -1;
-  }
-
-  .hero-title {
-    font-size: clamp(2.2rem, 5vw, 3rem);
   }
 }
 
