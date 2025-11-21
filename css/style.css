@@ -77,29 +77,27 @@ body {
 .hero-brand {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.6rem;
   margin-bottom: 1.2rem;
 }
 
 .hero-logo {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 /* Slight tweak for small screens */
 @media (max-width: 640px) {
   .hero-brand {
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
 
   .hero-logo {
-    width: 52px;
-    height: 52px;
+    width: 26px;
+    height: 26px;
   }
 }
-
 
 .hero {
   display: flex;
@@ -147,6 +145,7 @@ body {
   margin-top: 0;
   margin-bottom: 0.9rem;
 }
+
 
 /* ------------------------------------------------------------
    Subscribe CTA Section
