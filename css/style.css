@@ -110,9 +110,8 @@ body {
 }
 
 .lead {
-  font-size: 1.05rem;
+  font-size: 1.18rem;
   line-height: 1.7;
-  margin-bottom: 1rem;
 }
 
 .hero-text p {
@@ -380,18 +379,8 @@ body {
   color: var(--text-main);
 }
 
-.welcome-text {
-  max-width: 520px;
-  margin: 0 auto 0.9rem;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-main);
-}
-
-.welcome-text.subtle {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
+.welcome-text { font-size: 1rem; }
+.welcome-text.subtle { font-size: 0.95rem; }
 
 .welcome-button {
   display: inline-block;
