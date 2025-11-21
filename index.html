@@ -92,34 +92,42 @@
             ></iframe>
         </section>
         <script>
-          (function () {
-            const form = document.getElementById('jh-subscribe-form');
-            const iframe = document.querySelector('iframe[name="bd-subscribe-frame"]');
-          
-            if (!form || !iframe) return;
-          
-            // Listen for load events from the iframe (BD writes a tiny HTML response)
-            iframe.addEventListener('load', function () {
-              try {
-                const body = iframe.contentDocument.body.innerText.toLowerCase();
-          
-                if (body.includes('already subscribed')) {
-                  window.location.href = 'https://junglehouse.events/already-subscribed.html';
-                } else if (body.includes('check your inbox') || body.includes('confirm')) {
-                  window.location.href = 'https://junglehouse.events/welcome.html';
-                } else if (body.includes('error') || body.includes('invalid')) {
-                  alert("Hmm… that email address didn’t work. Want to try again?");
-                } else {
-                  // Fallback for unexpected responses
-                  window.location.href = 'https://junglehouse.events/welcome.html';
-                }
-              } catch (e) {
-                // If we can't read the iframe for some reason, default to welcome
-                window.location.href = 'https://junglehouse.events/welcome.html';
-              }
-            });
-          })();
-        </script>
+(function () {
+  const form = document.getElementById('jh-subscribe-form');
+  const iframe = document.querySelector('iframe[name="bd-subscribe-frame"]');
+
+  if (!form || !iframe) return;
+
+  // Listen for the Buttondown response in the iframe
+  iframe.addEventListener('load', function () {
+    try {
+      const bodyText = iframe.contentDocument.body.innerText.toLowerCase();
+
+      if (bodyText.includes('already subscribed')) {
+        // Existing subscriber
+        window.location.href = 'https://junglehouse.events/already-subscribed.html';
+      } else if (
+        bodyText.includes('check your inbox') ||
+        bodyText.includes('confirm') ||
+        bodyText.includes('success')
+      ) {
+        // New subscriber, confirmation sent
+        window.location.href = 'https://junglehouse.events/welcome.html';
+      } else if (bodyText.includes('error') || bodyText.includes('invalid')) {
+        // Some kind of error
+        alert("Hmm… that email address didn’t work. Want to try again?");
+      } else {
+        // Fallback: still send to welcome
+        window.location.href = 'https://junglehouse.events/welcome.html';
+      }
+    } catch (e) {
+      // If we can't read the iframe, fall back to welcome
+      window.location.href = 'https://junglehouse.events/welcome.html';
+    }
+  });
+})();
+</script>
+
         <!-- ============================= -->
         <!-- UPCOMING EVENTS -->
         <!-- ============================= -->
