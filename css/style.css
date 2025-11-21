@@ -101,7 +101,7 @@ body {
 }
 
 
-/* Subscribe CTA section */
+/* Subscribe CTA area */
 
 .subscribe-cta {
   margin-top: 3rem;
@@ -126,50 +126,74 @@ body {
   color: rgba(44, 36, 53, 0.75);
 }
 
+/* Layout for input + button */
 .subscribe-form {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
+/* Input styling */
 .subscribe-input {
-  padding: 0.7rem 1rem;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
-  border: 2px solid rgba(44, 36, 53, 0.22);
   border-radius: 999px;
   min-width: 260px;
-  flex: 1;
   max-width: 340px;
+  flex: 1;
+  border: 2px solid rgba(44, 36, 53, 0.22);
   background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .subscribe-input:focus {
   outline: none;
   border-color: var(--purple-bg);
-  box-shadow: 0 0 0 3px rgba(79, 52, 114, 0.18);
+  box-shadow: 0 0 0 3px rgba(79, 52, 114, 0.15);
 }
 
+/* Luxe button */
 .subscribe-submit {
-  padding: 0.7rem 1.4rem;
+  padding: 0.8rem 1.7rem;
   font-size: 1rem;
   font-weight: 600;
   border: none;
   border-radius: 999px;
-  background: var(--button-green);
-  color: white;
+  background: linear-gradient(135deg, var(--button-green) 0%, #5ea44f 100%);
+  color: #fff;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease;
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 3px rgba(255, 255, 255, 0.4);
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.25s ease;
 }
 
 .subscribe-submit:hover {
-  background: var(--button-green-hover);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--button-green-hover) 0%, #4c813e 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.18),
+    inset 0 1px 4px rgba(255, 255, 255, 0.5);
 }
 
 .subscribe-submit:active {
   transform: translateY(0);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.35);
 }
+
+.subscribe-submit:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(78, 139, 64, 0.35),
+    0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 
 
 /* Upcoming Events */
