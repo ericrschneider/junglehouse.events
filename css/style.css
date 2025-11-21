@@ -363,3 +363,61 @@ body {
     font-size: clamp(2.2rem, 5vw, 3rem);
   }
 }
+
+/* ------------------------------------------------------------
+   Welcome Page
+------------------------------------------------------------ */
+
+.welcome-cta {
+  text-align: center;
+  padding: 3rem 2.5rem 2.8rem;
+}
+
+.welcome-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.1rem;
+  margin: 0 0 1.2rem;
+  color: var(--text-main);
+}
+
+.welcome-text {
+  max-width: 520px;
+  margin: 0 auto 0.9rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+.welcome-text.subtle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.welcome-button {
+  display: inline-block;
+  margin-top: 1.6rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--accent-green);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition:
+    background 0.15s ease,
+    transform 0.12s ease,
+    box-shadow 0.15s ease;
+}
+
+.welcome-button:hover {
+  background: var(--accent-green-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
+}
+
