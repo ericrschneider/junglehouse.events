@@ -72,7 +72,7 @@
       Let&rsquo;s Gather
     </button>
     <!-- remove success_url; it's not used by Buttondown -->
-    <!-- <input type="hidden" name="success_url" value="https://junglehouse.events/welcome" /> -->
+    <!-- <input type="hidden" name="success_url" value="https://junglehouse.events/welcome.html" /> -->
   </form>
 
   <!-- Hidden iframe to receive Buttondown's success page -->
@@ -91,7 +91,7 @@
       // Let the form submit to Buttondown in the hidden iframe,
       // then send the user to your custom welcome page.
       setTimeout(function () {
-        window.location.href = 'https://junglehouse.events/welcome';
+        window.location.href = 'https://junglehouse.events/welcome.html';
       }, 150);
     });
   })();
