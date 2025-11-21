@@ -70,7 +70,7 @@ body {
 }
 
 /* ------------------------------------------------------------
-   Hero Section (Ultra-Polished)
+   Hero Section (Ultra-Polished, Proportional Icon)
 ------------------------------------------------------------ */
 
 /* Two-column layout (desktop) */
@@ -83,27 +83,28 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* Left column container */
+/* Left column */
 .hero-text {
   flex: 1 1 0;
   min-width: 280px;
-  max-width: 500px;        /* narrows column for better rhythm */
-  padding-top: 0.3rem;     /* subtle vertical alignment improvement */
+  max-width: 500px;
+  padding-top: 0.3rem; /* subtle vertical alignment improvement */
 }
 
 /* Logo + title row */
 .hero-brand {
   display: flex;
-  align-items: center;
-  gap: 1.1rem;
-  margin-bottom: 1.4rem;   /* refined spacing */
+  align-items: flex-start;  /* aligns icon to top of the text block */
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
 }
 
-/* Logo sizing */
+/* Proportional icon sizing: automatically scales with text size */
 .hero-logo {
-  width: 64px;
-  height: 64px;
+  height: 1.7em;  /* proportional to the current hero-title font size */
+  width: auto;
   object-fit: contain;
+  margin-top: 0.1em; /* slight nudge for optical alignment */
 }
 
 /* Title typography */
@@ -124,11 +125,11 @@ body {
   max-width: 40rem;
 }
 
-/* Right column: Image block */
+/* Right column: Image */
 .hero-image {
-  flex: 0 0 415px;         /* slightly larger image for balance */
+  flex: 0 0 415px;   /* slightly larger image for better visual weight */
   max-width: 430px;
-  margin-top: 0.3rem;      /* <= final tweak (was 0.6rem) */
+  margin-top: 0.3rem; /* final alignment tweak */
 }
 
 .hero-image img {
@@ -144,8 +145,7 @@ body {
 
 @media (max-width: 900px) {
   .hero-logo {
-    width: 54px;
-    height: 54px;
+    height: 1.55em;
   }
 
   .hero-image {
@@ -158,11 +158,10 @@ body {
   .hero {
     flex-direction: column;
     align-items: flex-start;
-    flex-wrap: nowrap;
   }
 
   .hero-image {
-    order: -1;            /* image above text */
+    order: -1; /* image above text */
     width: 100%;
     max-width: 100%;
     margin-top: 0;
@@ -176,10 +175,10 @@ body {
 
 @media (max-width: 640px) {
   .hero-logo {
-    width: 44px;
-    height: 44px;
+    height: 1.4em; /* slightly smaller icon for small phones */
   }
 }
+
 
 /* ------------------------------------------------------------
    Responsive (Tablet + Phone)
