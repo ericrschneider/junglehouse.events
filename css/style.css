@@ -70,74 +70,74 @@ body {
 }
 
 /* ------------------------------------------------------------
-   Hero Section (Ultra-Polished, Proportional Icon)
+   Hero Section
 ------------------------------------------------------------ */
 
-/* Two-column layout (desktop) */
+/* Layout of the whole hero section */
 .hero {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 2.5rem;
-  flex-wrap: nowrap;
-  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 }
 
-/* Left column */
-.hero-text {
-  flex: 1 1 0;
-  min-width: 280px;
-  max-width: 500px;
-  padding-top: 0.3rem; /* subtle vertical alignment improvement */
-}
-
-/* Logo + title row */
+/* Container holding logo + title */
 .hero-brand {
   display: flex;
-  align-items: flex-start;  /* aligns icon to top of the text block */
-  gap: 0.9rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1.4rem;
 }
 
-/* Proportional icon sizing: automatically scales with text size */
+/* Scales icon with heading text */
 .hero-logo {
-  height: 1.7em;  /* proportional to the current hero-title font size */
+  height: 1.55em;       /* proportional to text — matches brand image */
   width: auto;
   object-fit: contain;
-  margin-top: 0.1em; /* slight nudge for optical alignment */
+  margin-top: 0.05em;    /* optical centering */
 }
 
-/* Title typography */
+/* Responsive sizing for icon */
+@media (max-width: 900px) {
+  .hero-logo {
+    height: 1.45em;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-logo {
+    height: 1.35em;
+  }
+}
+
+/* Hero title (already in your design system) */
 .hero-title {
-  margin: 0;
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.4rem, 4.3vw, 3.2rem);
-  line-height: 1.1;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0;
   color: var(--text-main);
 }
 
-/* Lead paragraph */
-.lead {
-  margin-top: 0.3rem;
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  max-width: 40rem;
-}
-
-/* Right column: Image */
-.hero-image {
-  flex: 0 0 415px;   /* slightly larger image for better visual weight */
-  max-width: 430px;
-  margin-top: 0.3rem; /* final alignment tweak */
-}
-
+/* Image container */
 .hero-image img {
-  display: block;
   width: 100%;
   height: auto;
-  border-radius: 24px;
+  border-radius: 22px;
+  display: block;
 }
+
+/* Stack on phones/tablets */
+@media (max-width: 800px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero-image {
+    order: -1;
+  }
+}
+
 
 /* ------------------------------------------------------------
    Responsive (Tablet + Phone)
