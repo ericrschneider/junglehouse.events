@@ -70,7 +70,7 @@ body {
 }
 
 /* ------------------------------------------------------------
-   Hero Section (fixed + polished layout)
+   Hero Section
 ------------------------------------------------------------ */
 
 /* Two-column layout (desktop) */
@@ -80,28 +80,28 @@ body {
   align-items: center;
   gap: 2.5rem;
   flex-wrap: nowrap;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 /* Left column container */
 .hero-text {
   flex: 1 1 0;
   min-width: 280px;
-  max-width: 540px;
+  max-width: 520px;          /* slightly narrower for better balance */
 }
 
 /* Logo + title row */
 .hero-brand {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.4rem;
+  gap: 1.1rem;
+  margin-bottom: 1.6rem;
 }
 
-/* Logo sizing */
+/* Logo sizing – make it feel intentional */
 .hero-logo {
-  width: 48px;
-  height: 48px;
+  width: 64px;               /* was 48px */
+  height: 64px;
   object-fit: contain;
 }
 
@@ -109,15 +109,15 @@ body {
 .hero-title {
   margin: 0;
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.3rem, 4vw, 3rem);
+  font-size: clamp(2.4rem, 4.3vw, 3.2rem);
   line-height: 1.1;
   color: var(--text-main);
 }
 
 /* Lead paragraph */
 .lead {
-  margin-top: 0.4rem;
-  margin-bottom: 0.9rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
   font-size: 1.05rem;
   color: var(--text-muted);
   max-width: 40rem;
@@ -125,8 +125,9 @@ body {
 
 /* Right column: Image block */
 .hero-image {
-  flex: 0 0 360px;
-  max-width: 380px;
+  flex: 0 0 390px;           /* slightly larger image */
+  max-width: 410px;
+  margin-top: 0.4rem;        /* gentle nudge for visual alignment */
 }
 
 .hero-image img {
@@ -135,6 +136,50 @@ body {
   height: auto;
   border-radius: 24px;
 }
+
+/* ------------------------------------------------------------
+   Responsive (Tablet + Phone)
+------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+  .hero-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .hero-image {
+    flex: 0 0 340px;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .hero-image {
+    order: -1;               /* image above text */
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 6vw, 2.7rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-logo {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 
 /* ------------------------------------------------------------
    Responsive (Tablet + Phone)
