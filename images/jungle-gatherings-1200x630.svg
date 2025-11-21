@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <style> .bg { fill:#2b0a55; } .text { fill:#f7f1d8; font-family: "Georgia", serif; font-weight:700; } </style>
+  </defs>
+  <rect width="1200" height="630" class="bg"/>
+  <!-- Title split into two lines, centered --> 
+  <text x="600" y="190" text-anchor="middle" font-size="86" class="text">Jungle House</text>
+  <text x="600" y="270" text-anchor="middle" font-size="86" class="text">Gatherings</text>
+  <!-- Centered emblem (placeholder spear-like glyph; replace with your emblem path if you have it) --> 
+  <g transform="translate(0,0)">
+    <!-- Simple symmetric emblem placeholder --> 
+    <path d="M600 360 C585 345 570 315 570 270 C570 240 590 230 600 220 C610 230 630 240 630 270 C630 315 615 345 600 360 Z" fill="#f7f1d8"/>
+  </g>
+  <!-- Safe-area guides (optional; remove in final export) --> <!-- <rect x="200" y="120" width="800" height="420" fill="none" stroke="#ffffff33" /> --> 
+</svg>
