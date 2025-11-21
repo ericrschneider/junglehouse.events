@@ -70,47 +70,47 @@ body {
 }
 
 /* ------------------------------------------------------------
-Hero Section
+   Hero Section
 ------------------------------------------------------------ */
 
-/* Logo + title lockup /
+/* Logo + title lockup */
 .hero-brand {
-display: flex;
-flex-direction: column; / icon above title /
-align-items: flex-start; / left aligned */
-gap: 0.5rem;
-margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: row;      /* icon left of title */
+  align-items: center;      /* align vertically */
+  gap: 1rem;                /* space between icon + text */
+  margin-bottom: 1.4rem;
 }
 
-/* Bigger default size */
 .hero-logo {
-width: 62px;
-height: 62px;
-object-fit: contain;
+  width: 56px;              /* slightly larger than before */
+  height: 56px;
+  object-fit: contain;
 }
 
 /* Slightly smaller on tablets */
 @media (max-width: 900px) {
-.hero-logo {
-width: 54px;
-height: 54px;
-}
+  .hero-logo {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 /* Smaller on phones */
 @media (max-width: 640px) {
-.hero-logo {
-width: 46px;
-height: 46px;
-}
+  .hero-logo {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .hero {
-display: flex;
-align-items: flex-start;
-gap: 2.5rem;
-flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex-wrap: wrap;
 }
+
 
 /* ------------------------------------------------------------
    Subscribe CTA Section
