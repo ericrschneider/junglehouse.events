@@ -82,20 +82,23 @@ body {
 }
 
 .hero-logo {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
-/* Slight tweak for small screens */
+/* Smaller on phones, a bit larger on big screens */
 @media (max-width: 640px) {
-  .hero-brand {
-    gap: 0.5rem;
-  }
-
   .hero-logo {
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero-logo {
+    width: 46px;
+    height: 46px;
   }
 }
 
@@ -145,6 +148,7 @@ body {
   margin-top: 0;
   margin-bottom: 0.9rem;
 }
+
 
 
 /* ------------------------------------------------------------
