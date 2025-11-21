@@ -70,39 +70,40 @@ body {
 }
 
 /* ------------------------------------------------------------
-   Hero Section (Ultra-Polished)
+   Hero Section (Refined Proportions)
 ------------------------------------------------------------ */
 
 /* Two-column layout (desktop) */
 .hero {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 2.5rem;
+  align-items: flex-start;             /* text aligns to top of image */
+  gap: 3rem;                           /* a bit more breathing room */
   flex-wrap: nowrap;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  padding-top: 1.25rem;                /* reduces top "floatiness" */
 }
 
 /* Left column container */
 .hero-text {
   flex: 1 1 0;
   min-width: 280px;
-  max-width: 500px;        /* narrows column for better rhythm */
-  padding-top: 0.3rem;     /* subtle vertical alignment improvement */
+  max-width: 540px;                    /* a touch wider for nicer line length */
+  padding-top: 0;                      /* align with top of image */
 }
 
 /* Logo + title row */
 .hero-brand {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
-  margin-bottom: 1.4rem;   /* refined spacing */
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;               /* slightly more space under brand row */
 }
 
 /* Logo sizing */
 .hero-logo {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -110,32 +111,34 @@ body {
 .hero-title {
   margin: 0;
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.4rem, 4.3vw, 3.2rem);
-  line-height: 1.1;
+  font-size: clamp(2.7rem, 4.8vw, 3.4rem);  /* bigger: stronger hierarchy */
+  line-height: 1.05;
+  letter-spacing: 0.01em;
   color: var(--text-main);
 }
 
 /* Lead paragraph */
 .lead {
-  margin-top: 0.3rem;
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.02rem;                   /* slightly down so title dominates */
+  line-height: 1.55;
   color: var(--text-muted);
-  max-width: 40rem;
+  max-width: 38rem;
 }
 
 /* Right column: Image block */
 .hero-image {
-  flex: 0 0 415px;         /* slightly larger image for balance */
-  max-width: 430px;
-  margin-top: 0.3rem;      /* <= final tweak (was 0.6rem) */
+  flex: 0 0 min(430px, 42%);            /* proportional to viewport width */
+  max-width: 440px;
+  margin-top: 0.2rem;                   /* fine-tune vertical alignment */
 }
 
 .hero-image img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 24px;
+  border-radius: 22px;                  /* slightly tighter radius for polish */
 }
 
 /* ------------------------------------------------------------
@@ -143,14 +146,23 @@ body {
 ------------------------------------------------------------ */
 
 @media (max-width: 900px) {
+  .hero {
+    gap: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
   .hero-logo {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
   }
 
   .hero-image {
     flex: 0 0 360px;
     max-width: 380px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.3rem, 5vw, 2.9rem);
   }
 }
 
@@ -159,18 +171,25 @@ body {
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: nowrap;
+    padding-top: 0.75rem;
+    gap: 1.8rem;
   }
 
   .hero-image {
-    order: -1;            /* image above text */
+    order: -1;                          /* image above text */
     width: 100%;
     max-width: 100%;
     margin-top: 0;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .hero-text {
+    max-width: 100%;
   }
 
   .hero-title {
     font-size: clamp(2.1rem, 6vw, 2.7rem);
+    line-height: 1.08;
   }
 }
 
@@ -179,7 +198,17 @@ body {
     width: 44px;
     height: 44px;
   }
+
+  .hero-brand {
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
 }
+
 
 
 /* ------------------------------------------------------------
