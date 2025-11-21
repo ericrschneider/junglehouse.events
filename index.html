@@ -48,28 +48,55 @@
           </div>
         </section>
         <section class="subscribe-cta">
-          <h2>Join the Invitation List</h2>
-          <p class="subscribe-tagline">
-            Enter your email to get notified about new concerts and gatherings at Jungle House.
-          </p>
-          <form class="subscribe-form"
-            action="https://buttondown.email/api/emails/embed-subscribe/ericrschneider"
-            method="post">
-            
-            <input
-              id="bd-email"
-              type="email"
-              name="email"
-              placeholder="Your email address"
-              required
-              class="subscribe-input"
-              />
-            <button type="submit" class="subscribe-submit">
-            Let&rsquo;s Gather
-            </button>
-            <input type="hidden" name="success_url" value="https://junglehouse.events/welcome" />
-          </form>
-        </section>
+  <h2>Join the Invitation List</h2>
+  <p class="subscribe-tagline">
+    Enter your email to get notified about new concerts and gatherings at Jungle House.
+  </p>
+
+  <form
+    class="subscribe-form"
+    id="jh-subscribe-form"
+    action="https://buttondown.email/api/emails/embed-subscribe/ericrschneider"
+    method="post"
+    target="bd-subscribe-frame"
+  >
+    <input
+      id="bd-email"
+      type="email"
+      name="email"
+      placeholder="Your email address"
+      required
+      class="subscribe-input"
+    />
+    <button type="submit" class="subscribe-submit">
+      Let&rsquo;s Gather
+    </button>
+    <!-- remove success_url; it's not used by Buttondown -->
+    <!-- <input type="hidden" name="success_url" value="https://junglehouse.events/welcome" /> -->
+  </form>
+
+  <!-- Hidden iframe to receive Buttondown's success page -->
+  <iframe
+    name="bd-subscribe-frame"
+    style="display:none; visibility:hidden; width:0; height:0; border:0;"
+  ></iframe>
+</section>
+
+<script>
+  (function () {
+    var form = document.getElementById('jh-subscribe-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function () {
+      // Let the form submit to Buttondown in the hidden iframe,
+      // then send the user to your custom welcome page.
+      setTimeout(function () {
+        window.location.href = 'https://junglehouse.events/welcome';
+      }, 150);
+    });
+  })();
+</script>
+
         <section class="upcoming-events">
           <h2>Upcoming Gatherings</h2>
           <p class="upcoming-tagline">
