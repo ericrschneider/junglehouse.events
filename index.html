@@ -42,9 +42,6 @@
             easy to unsubscribe.
           </p>
 
-          <button class="subscribe-btn">
-            Subscribe
-          </button>
         </div>
 
         <div class="hero-image">
@@ -162,13 +159,26 @@
   </div>
 </section>
 
+<section class="subscribe-cta">
+  <h2>Join the Invitation List</h2>
+  <p class="subscribe-tagline">
+    Enter your email to get notified about new concerts and gatherings at Jungle House.
+  </p>
 
+  <form class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/YOUR_USERNAME_HERE" method="post" target="_blank">
+    <input
+      type="email"
+      name="email"
+      placeholder="Your email address"
+      required
+      class="subscribe-input"
+    />
+    <button type="submit" class="subscribe-submit">
+      Notify Me
+    </button>
+  </form>
+</section>
 
-      <footer class="palette">
-        <span class="palette-swatch purple"></span>
-        <span class="palette-swatch orange"></span>
-        <span class="palette-swatch green"></span>
-      </footer>
     </main>
   </div>
 </body>
