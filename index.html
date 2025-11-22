@@ -107,15 +107,31 @@
 
 <script>
   (function () {
+    var form = document.getElementById('jh-subscribe-form');
+    var button = form && form.querySelector('button[type="submit"]');
     var iframe = document.getElementById('bd-subscribe-frame');
-    if (!iframe) return;
+    var submitted = false;
 
-    iframe.addEventListener('load', function () {
-      // Redirect ONLY after Buttondown has fully received the submission.
-      window.location.href = 'https://junglehouse.events/welcome.html';
-    });
+    if (form && button) {
+      form.addEventListener('submit', function () {
+        // instant feedback
+        submitted = true;
+        button.disabled = true;
+        button.textContent = 'Submitting…';
+      });
+    }
+
+    if (iframe) {
+      iframe.addEventListener('load', function () {
+        // only redirect after an actual submit
+        if (submitted) {
+          window.location.href = 'https://junglehouse.events/welcome.html';
+        }
+      });
+    }
   })();
 </script>
+
 
         <!-- ============================= -->
         <!-- UPCOMING EVENTS -->
