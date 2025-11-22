@@ -58,55 +58,64 @@
               />
           </div>
         </section>
-        <!-- ============================= -->
-        <!-- SUBSCRIBE SECTION -->
-        <!-- ============================= -->
-        <section class="subscribe-cta">
-          <h2>Join the Invitation List</h2>
-          <p class="subscribe-tagline">
-            Enter your email to get notified about new concerts and gatherings at Jungle House.
-          </p>
-          <form
-            class="subscribe-form"
-            id="jh-subscribe-form"
-            action="https://buttondown.email/api/emails/embed-subscribe/ericrschneider"
-            method="post"
-            target="bd-subscribe-frame"
-            >
-            <input
-              id="bd-email"
-              type="email"
-              name="email"
-              placeholder="Your email address"
-              required
-              class="subscribe-input"
-              />
-            <button type="submit" class="subscribe-submit">
-            Let&rsquo;s Gather
-            </button>
-          </form>
-          <!-- Hidden iframe to capture BD redirect -->
-          <iframe
-            name="bd-subscribe-frame"
-            style="display:none; visibility:hidden; width:0; height:0; border:0;"
-            ></iframe>
-          <p style="font-size:0.85rem; margin-top:0.5rem; opacity:0.8;">
-            If you’ve already signed up with this email, you won’t get another confirmation email —
-            you’re still on the list.
-        </p>
-        </section>
-        <script>
-          (function () {
-            var form = document.getElementById('jh-subscribe-form');
-            if (!form) return;
-          
-            form.addEventListener('submit', function () {
-              setTimeout(function () {
-                window.location.href = 'https://junglehouse.events/welcome.html';
-              }, 150);
-            });
-          })();
-        </script>
+      <!-- ============================= -->
+<!-- SUBSCRIBE SECTION -->
+<!-- ============================= -->
+<section class="subscribe-cta">
+  <h2>Join the Invitation List</h2>
+  <p class="subscribe-tagline">
+    Enter your email to get notified about new concerts and gatherings at Jungle House.
+  </p>
+
+  <form
+    class="subscribe-form"
+    id="jh-subscribe-form"
+    action="https://buttondown.email/api/emails/embed-subscribe/ericrschneider"
+    method="post"
+    target="bd-subscribe-frame"
+  >
+    <input
+      id="bd-email"
+      type="email"
+      name="email"
+      placeholder="Your email address"
+      required
+      class="subscribe-input"
+    />
+
+    <!-- REQUIRED for reliable embed submissions -->
+    <input type="hidden" name="embed" value="1" />
+
+    <button type="submit" class="subscribe-submit">
+      Let&rsquo;s Gather
+    </button>
+  </form>
+
+  <!-- Hidden iframe to capture BD response -->
+  <iframe
+    name="bd-subscribe-frame"
+    id="bd-subscribe-frame"
+    style="display:none; visibility:hidden; width:0; height:0; border:0;"
+  ></iframe>
+
+  <p style="font-size:0.85rem; margin-top:0.5rem; opacity:0.8;">
+    If you’ve already signed up with this email, you won’t get another confirmation email —
+    you’re still on the list.
+  </p>
+</section>
+
+<script>
+  (function () {
+    var iframe = document.getElementById('bd-subscribe-frame');
+    if (!iframe) return;
+
+    iframe.addEventListener('load', function () {
+      // Redirect ONLY after Buttondown has fully received the submission.
+      window.location.href = 'https://junglehouse.events/welcome.html';
+    });
+  })();
+</script>
+
         <!-- ============================= -->
         <!-- UPCOMING EVENTS -->
         <!-- ============================= -->
