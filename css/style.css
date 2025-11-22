@@ -80,7 +80,7 @@ body {
   align-items: flex-start;                    /* align text to top of image */
   gap: clamp(2.2rem, 4vw, 3rem);             /* responsive gap */
   flex-wrap: nowrap;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   padding-top: 1.25rem;                      /* reduces top "floatiness" */
 }
 
@@ -122,14 +122,14 @@ body {
   margin-top: 0.4rem;
   margin-bottom: 1.2rem;
   font-size: 1.32rem;                        /* slightly down so title dominates */
-  line-height: 1.55;
+  line-height: 1.48;
   color: var(--text-muted);
   max-width: 38rem;
 }
 
 /* Right column: Image block */
 .hero-image {
-  flex: 0 0 min(430px, 42%);                 /* proportional to viewport width */
+  flex: 0 0 min(400px, 38%);                 /* proportional to viewport width */
   max-width: 440px;
   margin-top: 0.2rem;                        /* fine-tune vertical alignment */
 }
