@@ -121,7 +121,7 @@ body {
 .lead {
   margin-top: 0.4rem;
   margin-bottom: 1.2rem;
-  font-size: 1.02rem;                        /* slightly down so title dominates */
+  font-size: 2.02rem;                        /* slightly down so title dominates */
   line-height: 1.55;
   color: var(--text-muted);
   max-width: 38rem;
