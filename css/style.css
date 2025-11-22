@@ -484,3 +484,102 @@ body {
   transform: translateY(0);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
 }
+
+/* Mobile typography + layout tweaks */
+@media (max-width: 600px) {
+  /* Slightly larger base text on phones */
+  body {
+    font-size: 17px; /* was 16px default */
+  }
+
+  .page {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
+
+  .card {
+    padding: 1.5rem 1.2rem 1.8rem;
+  }
+
+  /* Hero text */
+  .hero-title {
+    font-size: 2.4rem;      /* force a bit bigger on small screens */
+    line-height: 1.15;
+  }
+
+  .lead,
+  .hero-text p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  /* Subscribe area */
+  .subscribe-cta {
+    margin-top: 2rem;
+    padding: 1.8rem 1.4rem;
+  }
+
+  .subscribe-cta h2 {
+    font-size: 1.6rem;
+  }
+
+  .subscribe-tagline {
+    font-size: 1.02rem;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .subscribe-input,
+  .subscribe-submit {
+    width: 100%;
+    max-width: none;
+  }
+
+  .subscribe-submit {
+    padding: 0.9rem 1.7rem;
+    font-size: 1.05rem;
+  }
+
+  /* Upcoming Gatherings section */
+  .upcoming-events h2 {
+    font-size: 1.7rem;
+  }
+
+  .upcoming-tagline {
+    font-size: 1.02rem;
+  }
+
+  .event-card {
+    padding: 1rem 1rem;
+  }
+
+  .event-title {
+    font-size: 1.05rem;
+  }
+
+  .event-meta {
+    font-size: 0.98rem;
+  }
+
+  .event-description {
+    font-size: 1.02rem;
+  }
+
+  .event-link {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.98rem;
+  }
+
+  /* Make date badge text a hair larger too */
+  .event-month {
+    font-size: 0.8rem;
+  }
+  .event-day {
+    font-size: 1.5rem;
+  }
+}
+
