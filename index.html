@@ -3,76 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <title>Jungle House Gatherings</title>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@300;400;600&display=swap"
       rel="stylesheet"
-      >
+    >
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
-    <!-- Social Preview -->
-    <meta property="og:image" content="https://junglehouse.events/images/og-flower.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:title" content="Jungle House Gatherings — Intimate concerts & gatherings in Santa Cruz" />
-    <meta property="og:description" content="Live music, warm company, and intimate gatherings at the Jungle House in Santa Cruz." />
+
+    <!-- Meta -->
+    <meta
+      name="description"
+      content="House concerts, gatherings, and community events at the Jungle House in Santa Cruz."
+    />
+    <meta property="og:title" content="Jungle House Gatherings" />
+    <meta
+      property="og:description"
+      content="House concerts, gatherings, and community events at the Jungle House in Santa Cruz."
+    />
+    <meta property="og:url" content="https://junglehouse.events" />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://junglehouse.events/images/share-social-media.png">
   </head>
+
   <body>
-    <div class="page">
-      <main class="card">
-        <!-- ============================= -->
-        <!-- HERO SECTION -->
-        <!-- ============================= -->
-        <section class="hero">
+    <div class="page-wrapper">
+      <!-- ============================= -->
+      <!-- HERO SECTION -->
+      <!-- ============================= -->
+      <header class="hero">
+        <div class="hero-content">
+          <div class="hero-logo">
+            <img src="images/jungle_house_logo.svg" alt="Jungle House logo" />
+          </div>
+
           <div class="hero-text">
-            <!-- Logo + title -->
-            <div class="hero-brand">
-              <img
-                src="images/jungle-flower-icon.png"
-                alt="Jungle House flower icon"
-                class="hero-logo"
-                />
-              <h1 class="hero-title">
-                Jungle House<br />
-                Gatherings
-              </h1>
-            </div>
-            <p class="lead">
-              535 Spring Street is my jungle home in Santa Cruz...and sometimes a place to gather…
-              in community, in beauty, in friendship, in music, in presence, in connection and in play.
-            </p>
-            <p>
-              This portal is a way for me to stay in contact with you and let you know what goodness
-              is happening at my place.
+            <h1>Jungle House Gatherings</h1>
+            <p class="tagline">
+              House concerts, gatherings, and community events at our lush Jungle House in Soquel.
             </p>
           </div>
-          <div class="hero-image">
-            <img
-              src="images/living_room_image.png"
-              alt="Cozy living room at Jungle House"
-              />
-          </div>
-        </section>
+        </div>
+
+        <div class="hero-photo">
+          <img src="images/house-exterior.jpg" alt="The Jungle House exterior at dusk" />
+        </div>
+      </header>
+
+      <main>
         <!-- ============================= -->
         <!-- SUBSCRIBE SECTION -->
         <!-- ============================= -->
         <section class="subscribe-cta">
           <h2>Join the Invitation List</h2>
+
           <p class="subscribe-tagline">
             Enter your email to get notified about new concerts and gatherings at Jungle House.
           </p>
+
           <form
             class="subscribe-form"
             id="jh-subscribe-form"
             action="https://buttondown.email/api/emails/embed-subscribe/ericrschneider"
             method="post"
             target="bd-subscribe-frame"
-            >
+          >
             <input
               id="bd-email"
               type="email"
@@ -80,154 +78,189 @@
               placeholder="Your email address"
               required
               class="subscribe-input"
-              />
+            />
+
+            <input type="hidden" name="embed" value="1" />
+
             <button type="submit" class="subscribe-submit">
-            Let&rsquo;s Gather
+              Let&rsquo;s Gather
             </button>
           </form>
+
           <!-- Hidden iframe to capture BD redirect -->
           <iframe
             name="bd-subscribe-frame"
+            id="bd-subscribe-frame"
             style="display:none; visibility:hidden; width:0; height:0; border:0;"
-            ></iframe>
-          <p style="font-size:0.85rem; margin-top:0.5rem; opacity:0.8;">
-            If you’ve already signed up with this email, you won’t get another confirmation email —
-            you’re still on the list.
-        </p>
+          ></iframe>
         </section>
+
         <script>
           (function () {
-            var form = document.getElementById('jh-subscribe-form');
-            if (!form) return;
-          
-            form.addEventListener('submit', function () {
-              setTimeout(function () {
-                window.location.href = 'https://junglehouse.events/welcome.html';
-              }, 150);
+            var iframe = document.getElementById('bd-subscribe-frame');
+            if (!iframe) return;
+
+            iframe.addEventListener('load', function () {
+              // Buttondown has responded; safe to redirect now
+              window.location.href = 'https://junglehouse.events/welcome.html';
             });
           })();
         </script>
+
         <!-- ============================= -->
         <!-- UPCOMING EVENTS -->
         <!-- ============================= -->
         <section class="upcoming-events">
           <h2>Upcoming Gatherings</h2>
-          <div class="events-list">
-            <!-- Event 1 -->
+
+          <div class="events-grid">
+            <!-- Example Event 1 -->
             <article class="event-card">
-              <div class="event-date-badge">
-                <span class="event-month">Nov</span>
-                <span class="event-day">29</span>
+              <div class="event-image">
+                <img src="images/event1.jpg" alt="Photo of musicians performing in a cozy living room" />
               </div>
               <div class="event-content">
-                <h3 class="event-title">Robbie Fitzsimmons — Santa Cruz House Concert</h3>
-                <p class="event-meta">
-                  <time datetime="2025-11-29T19:00">Saturday, November 29, 2025 · 7:00 PM</time><br />
-                  535 Spring St · Santa Cruz, CA
-                </p>
+                <h3>Intimate House Concert</h3>
+                <p class="event-date">Date TBA &middot; Evening</p>
                 <p class="event-description">
-                  Soulful, spacious piano and voice in an intimate listening-room setting.
+                  Small, listening-focused concerts in our living room, featuring touring and local artists.
+                  Expect beautiful music, warm people, and a cozy, candlelit atmosphere.
                 </p>
-                <a class="event-link"
-                  href="https://www.eventbrite.com/e/robbie-fitzsimmons-santa-cruz-house-concert-tickets-1956749232629?aff=ebdssbdestsearch"
-                  target="_blank" rel="noopener">
-                Get tickets
-                </a>
               </div>
             </article>
-            <!-- Event 2 -->
+
+            <!-- Example Event 2 -->
             <article class="event-card">
-              <div class="event-date-badge">
-                <span class="event-month">Dec</span>
-                <span class="event-day">5</span>
+              <div class="event-image">
+                <img src="images/event2.jpg" alt="Guests gathered on a lush back deck surrounded by greenery" />
               </div>
               <div class="event-content">
-                <h3 class="event-title">Jack West &amp; Walter Strauss — Guitar Duo</h3>
-                <p class="event-meta">
-                  <time datetime="2025-12-05T19:00">Friday, December 5, 2025 · 7:00 PM</time><br />
-                  Eric Schneider’s House Concerts · 535 Spring St
-                </p>
+                <h3>Gatherings on the Deck</h3>
+                <p class="event-date">Seasonal &middot; Afternoons / Evenings</p>
                 <p class="event-description">
-                  Two master guitarists weaving intricate acoustic soundscapes.
+                  Potlucks, community circles, and connection-focused gatherings on our covered back deck overlooking the trees.
                 </p>
-                <a class="event-link"
-                  href="https://www.eventbrite.com/e/jack-west-and-walter-strauss-guitar-duo-at-eric-schneiders-house-concerts-tickets-1968325426336?aff=ebdssbdestsearch"
-                  target="_blank" rel="noopener">
-                Get tickets
-                </a>
               </div>
             </article>
-            <!-- Event 3 -->
+
+            <!-- Example Event 3 -->
             <article class="event-card">
-              <div class="event-date-badge">
-                <span class="event-month">Dec</span>
-                <span class="event-day">12</span>
+              <div class="event-image">
+                <img src="images/event3.jpg" alt="Musician playing guitar with an attentive small audience" />
               </div>
               <div class="event-content">
-                <h3 class="event-title">An Intimate Solo Performance with Joe Kaplow</h3>
-                <p class="event-meta">
-                  <time datetime="2025-12-12T19:00">Friday, December 12, 2025 · 7:00 PM</time><br />
-                  535 Spring St · Santa Cruz, CA
-                </p>
+                <h3>Listening Room Sessions</h3>
+                <p class="event-date">Occasional &middot; By Invitation</p>
                 <p class="event-description">
-                  Story-rich songwriting and warm, rootsy folk from a local favorite.
+                  Deep listening evenings with songwriters and storytellers sharing their work in an intimate, respectful setting.
                 </p>
-                <a class="event-link"
-                  href="https://www.eventbrite.com/e/an-intimate-solo-performance-with-joe-kaplow-tickets-1956222567359?aff=ebdssbdestsearch"
-                  target="_blank" rel="noopener">
-                Get tickets
-                </a>
-              </div>
-            </article>
-            <!-- Event 4 -->
-            <article class="event-card">
-              <div class="event-date-badge">
-                <span class="event-month">Jan</span>
-                <span class="event-day">3</span>
-              </div>
-              <div class="event-content">
-                <h3 class="event-title">HEN — Women’s Vocal Trio</h3>
-                <p class="event-meta">
-                  <time datetime="2026-01-03T19:00">Saturday, January 3, 2026 · 7:00 PM</time><br />
-                  535 Spring St · Santa Cruz, CA
-                </p>
-                <p class="event-description">
-                  Lush harmonies and intricate vocal arrangements to start the year in beauty.
-                </p>
-                <a class="event-link"
-                  href="https://www.eventbrite.com/e/hen-womens-vocal-trio-tickets-1964650586792?aff=ebdssbdestsearch"
-                  target="_blank" rel="noopener">
-                Get tickets
-                </a>
               </div>
             </article>
           </div>
         </section>
+
+        <!-- ============================= -->
+        <!-- ABOUT SECTION -->
+        <!-- ============================= -->
+        <section class="about">
+          <div class="about-inner">
+            <div class="about-text">
+              <h2>About the Jungle House</h2>
+              <p>
+                Tucked away in Soquel, the Jungle House is surrounded by lush greenery and tucked under tall trees.
+                We&rsquo;re creating a space for music, conversation, and community gatherings that feel warm,
+                intimate, and welcoming.
+              </p>
+              <p>
+                Our events are mostly small (usually 20&ndash;40 people), listening-centered, and often include time
+                to connect with one another before and after the music or main experience.
+              </p>
+              <p>
+                If you&rsquo;d like to hear about upcoming events, the best way is to join the invitation list above.
+              </p>
+            </div>
+
+            <div class="about-photo">
+              <img src="images/house-interior.jpg" alt="Cozy interior of the Jungle House with warm lighting and instruments" />
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================= -->
+        <!-- HOST BIO -->
+        <!-- ============================= -->
+        <section class="host-bio">
+          <div class="host-inner">
+            <div class="host-photo">
+              <img src="images/eric-portrait.jpg" alt="Photo of host, Eric Schneider" />
+            </div>
+
+            <div class="host-text">
+              <h2>Meet Your Host</h2>
+              <p>
+                I&rsquo;m Eric Schneider &mdash; musician, producer, and long-time house concert enthusiast.
+                Over the years I&rsquo;ve hosted many intimate shows and gatherings, and I&rsquo;m excited
+                to open up the Jungle House as a small, cozy venue for music and community.
+              </p>
+              <p>
+                This portal is a way for me to stay in contact with you and let you know about upcoming events
+                without relying on the whims of social media algorithms.
+              </p>
+              <p>
+                I&rsquo;m glad you&rsquo;re here. I hope to see you at a gathering soon.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <!-- ============================= -->
         <!-- SHARE SECTION -->
         <!-- ============================= -->
-        <section style="text-align:center; padding:2rem 0;">
-          <h3 style="font-size:1.4rem; font-weight:600; margin-bottom:1rem;">
-            Share Jungle House Gatherings
-          </h3>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://junglehouse.events" target="_blank">
-          <img
-            src="https://junglehouse.events/images/share-social-media.png"
-            alt="Share Jungle House Gatherings"
-            style="width:260px; max-width:90%; border-radius:12px;"
+        <section class="share">
+          <h2>Share with Friends</h2>
+          <p>
+            Know someone who would love intimate house concerts and gatherings at the Jungle House?
+            Share this page with them:
+          </p>
+
+          <p class="share-links">
+            <a
+              href="mailto:?subject=Jungle House Gatherings&body=Hey%2C%20I%20thought%20you%20might%20like%20this%20house%20concert%20and%20gathering%20space%20in%20Soquel%3A%20https%3A%2F%2Fjunglehouse.events"
+              class="share-link"
             >
-          </a>
-          <p style="margin-top:0.6rem; font-size:0.95rem;">
+              Email a friend
+            </a>
+
+            <span class="share-divider">|</span>
+
             <a
               href="https://www.facebook.com/sharer/sharer.php?u=https://junglehouse.events"
               target="_blank"
-              style="font-weight:600; color:#1877F2;"
-              >
-            Click to create a Facebook post
+              rel="noopener noreferrer"
+              class="share-link"
+            >
+              Share on Facebook
             </a>
           </p>
         </section>
       </main>
+
+      <!-- ============================= -->
+      <!-- FOOTER -->
+      <!-- ============================= -->
+      <footer class="footer">
+        <p>&copy; <span id="current-year"></span> Jungle House Gatherings</p>
+      </footer>
     </div>
+
+    <script>
+      // Set current year in footer
+      (function () {
+        var yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      })();
+    </script>
   </body>
 </html>
