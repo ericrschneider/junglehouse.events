@@ -485,3 +485,34 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
 }
 
+
+/* Extra mobile polish */
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;              /* make text feel less tiny on phones */
+  }
+
+  .page {
+    margin: 1.5rem auto;          /* reduce top/bottom whitespace */
+    padding: 0 0.75rem;
+  }
+
+  .card {
+    padding: 1.5rem 1.25rem 1.75rem;
+  }
+
+  .subscribe-cta {
+    padding: 2rem 1.5rem;
+  }
+
+  .event-title {
+    font-size: 1.1rem;
+  }
+
+  .event-description,
+  .event-meta {
+    font-size: 0.98rem;
+  }
+}
+
+
