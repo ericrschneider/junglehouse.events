@@ -67,42 +67,47 @@
           <p class="subscribe-tagline">
             Enter your email to get notified about new concerts and gatherings at Jungle House.
           </p>
-          <form
-            class="subscribe-form"
-            id="jh-subscribe-form"
-            action="https://buttondown.email/api/emails/embed-subscribe/ericrschneider"
-            method="post"
-            target="bd-subscribe-frame"
-            >
-            <input
-              type="text"
-              id="firstname"
-              name="metadata_firstname"
-              placeholder="Your first name"
-              required
-              class="subscribe-input"
-              />
-             <input
-              type="text"
-              id="lastname"
-              name="metadata_lastname"
-              placeholder="Your last name"
-              required
-              class="subscribe-input"
-              />
-            <input
-              id="bd-email"
-              type="email"
-              name="email"
-              placeholder="Your email address"
-              required
-              class="subscribe-input"
-              />
-            <input type="hidden" name="embed" value="1" />
-            <button type="submit" class="subscribe-submit">
-            Let&rsquo;s Gather
-            </button>
-          </form>
+ <form
+  class="subscribe-form"
+  id="jh-subscribe-form"
+  action="https://buttondown.email/api/emails/embed-subscribe/ericrschneider"
+  method="post"
+  target="bd-subscribe-frame"
+>
+  <input
+    type="text"
+    id="firstname"
+    name="metadata__first_name"
+    placeholder="Your first name"
+    required
+    class="subscribe-input"
+  />
+
+  <input
+    type="text"
+    id="lastname"
+    name="metadata__last_name"
+    placeholder="Your last name"
+    required
+    class="subscribe-input"
+  />
+
+  <input
+    id="bd-email"
+    type="email"
+    name="email"
+    placeholder="Your email address"
+    required
+    class="subscribe-input"
+  />
+
+  <input type="hidden" name="embed" value="1" />
+
+  <button type="submit" class="subscribe-submit">
+    Let&rsquo;s Gather
+  </button>
+</form>
+
           <!-- Hidden iframe to capture BD response -->
           <iframe
             name="bd-subscribe-frame"
